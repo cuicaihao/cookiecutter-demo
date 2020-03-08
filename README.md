@@ -1,8 +1,34 @@
-# cookiecutter-demo
+# Cookiecutter-demo: Convert a TensorFlow notebook into a productive level project.
 
-Test the basic function of coodiecutter.
+## Initialize the project organization.
 
-By Chris.Cui
+Test the basic function of cookiecutter.
+
+### Requirements to use the cookiecutter template:
+
+---
+
+- Python 3.7.4 64-bit (anaconda)
+- [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.7.0: This can be installed with pip by or conda depending on how you manage your Python packages:
+
+```bash
+$ pip install cookiecutter
+```
+
+or
+
+```bash
+$ conda config --add channels conda-forge
+$ conda install cookiecutter
+```
+
+To start a new project, run:
+
+```bash
+cookiecutter https://github.com/drivendata/cookiecutter-data-science
+```
+
+Use defalut setting, to fill in basic information of your project.
 
 ## Project Organization
 
@@ -50,6 +76,20 @@ By Chris.Cui
     │       └── visualize.py
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+
+## Downloand TensorFlow Notebook
+
+Prepare the notebook for conversion. I choose the notebook from Google's tensorflow demo.
+
+```bash
+$ curl -o notebooks/demo.ipynb https://storage.googleapis.com/tensorflow_docs/docs/site/en/tutorials/quickstart/beginner.ipynb
+```
+
+or
+
+```bash
+$ curl -o notebooks/demo2.ipynb https://storage.googleapis.com/tensorflow_docs/docs/site/en/tutorials/keras/classification.ipynb
+```
 
 ---
 
