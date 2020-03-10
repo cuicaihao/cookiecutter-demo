@@ -93,4 +93,65 @@ $ curl -o notebooks/demo2.ipynb https://storage.googleapis.com/tensorflow_docs/d
 
 ---
 
+## Run Test (Pytest)
+
+pytest will run all files of the form test\__.py or _\_test.py in the current directory and its subdirectories. More generally, it follows standard test discovery rules.
+
+### Test one file
+
+```bash
+$ pytest src/tests/unit/test_sum.py
+```
+
+```bash
+================================================== test session starts ===================================================
+platform darwin -- Python 3.7.4, pytest-5.3.5, py-1.8.1, pluggy-0.12.0
+rootdir: /Users/caihaocui/Documents/CodeWithMosh/Python/Modules/cookiecutter_demo
+collected 4 items
+
+src/tests/unit/test_sum.py ....                                                                                    [100%]
+
+=================================================== 4 passed in 0.03s ====================================================
+```
+
+### Test all the test\*.py files
+
+```bash
+$ pytest
+$ python -m pytest src/tests/unit/
+```
+
+```python
+(base) ➜  cookiecutter_demo git:(master) ✗ pytest
+===================================== test session starts =====================================
+platform darwin -- Python 3.7.4, pytest-5.3.5, py-1.8.1, pluggy-0.12.0
+rootdir: /Users/caihaocui/Documents/CodeWithMosh/Python/Modules/cookiecutter_demo
+collected 6 items
+
+src/tests/unit/test_fraction_sum.py ..                                                  [ 33%]
+src/tests/unit/test_sum.py ....                                                         [100%]
+
+====================================== 6 passed in 0.05s ======================================
+```
+
+## Run Unit Test
+
+[python unittest](https://docs.python.org/3.7/library/unittest.html)
+
+```bash
+(base) ➜  cookiecutter_demo git:(master) ✗ cd src
+(base) ➜  src git:(master) ✗ python -m unittest discover -s tests/unit/ -v
+test_bad_type (test_fraction_sum.TestSum) ... ok
+test_list_fraction (test_fraction_sum.TestSum) ... ok
+test_bad_type (test_sum.TestSum) ... ok
+test_list_int (test_sum.TestSum) ... ok
+test_sum (test_sum.TestSum) ... ok
+test_sum_tuple (test_sum.TestSum) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK
+```
+
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
